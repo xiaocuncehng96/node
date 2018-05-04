@@ -1,0 +1,29 @@
+{% extends './common.html' %}
+{% block con %}
+<h2>我的订单</h2>
+<table class="table" id="top">
+    <tr>
+        <th>商品</th>
+        <th>详情</th>
+        <th>价格</th>
+        <th>卖家</th> 
+        <th>时间</th>
+        <th>操作</th>
+    </tr>
+    {% for order in orderList %}
+    <tr>
+        <td><img src="{{order.goods.thumb}}" alt=""></td>
+        <td>{{order.goods.name}}</td>
+        <td class="pci">￥{{order.goods.price}}</td>
+        <td>{{order.seller.name}}</td>
+        <td>{{order.date}}</td>
+        <td>
+            <button name="rem"  class="btn btn-danger">确认收货</button>               
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+{% block css%}
+<link rel="stylesheet" href="/static/seller/css/good.css">
+{%endblock%}

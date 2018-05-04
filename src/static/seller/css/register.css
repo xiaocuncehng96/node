@@ -1,0 +1,41 @@
+#register{
+    margin: 50px auto 50px;
+    width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 50px 0;
+}
+#register>button{
+    width: 300px;
+    margin: 20px auto;
+}
+#register>.ab{
+    margin-left: 100px;
+}
+#register>.form-group{
+    width: 400px;
+    margin: 20px auto;
+}
+#register .control-label{
+   padding: 0;
+}
+#register .img-logo{
+    width: 100px;
+    height: 100px;
+}
+#register .img-banner{
+    width: 100px;
+    height: 100px;
+}
+.title{
+    text-align: center
+}
+.phone{
+    position: relative;
+}
+.phone>img{
+    position: absolute;
+    top: 7px;
+    right: 0;
+    display: none;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>首页</title>
+
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/common.css">
+    {% block css %}
+    {% endblock %} 
+  </head>
+  <body>
+    <div class="container" id="header">
+      {% if isLogin %}
+      <img alt="Brand" src="{{logo}}" class="img-circle ">    
+      {% else %}
+      <img alt="Brand" src="/static/images/logo.jpg" class="img-circle ">
+      {% endif %}
+      <ul class="nav nav-pills  " id="nav">
+        {% if isLogin %}
+            <li role="presentation"><a href="/logout">退出</a></li>
+            <li role="presentation" class="{{usActive}}"><a href="/user">个人中心</a></li>            
+        {% else %}
+        <li role="presentation" class="{{reActive}}" ><a href="/register">注册</a></li>
+        <li role="presentation" class="{{loActive}}"><a href="/login"><i  class="glyphicon glyphicon-user"></i>登录</a></li>
+        {% endif %}
+        <li role="presentation" class="{{orActive}}"><a href="/oderList">订单列表</a></li>
+        <li role="presentation" class="{{goActive}}"><a href="/goodList">商品管理</a></li>
+      </ul> 
+    </div>    
+    <div class="container">
+	        {% block con %}{% endblock %}
+    </div>
+    <div id="foot" class="container">
+    </div>
+    
+    
+  </body>
+</html>
+<script src="/static/js/lib/jquery-1.11.3.js"></script>
+    
+<script src="/static/js/plug/bootstrap.js"></script>
+{% block js %}{% endblock %}

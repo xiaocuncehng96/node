@@ -1,0 +1,38 @@
+#left{
+    float: left;
+}
+#box1{
+    border: 1px solid #ccc;
+}
+#box1 img{
+    width: 300px;
+    width: 300px;    
+}
+#box2{
+    margin-top: 20px;
+}
+#box2 img{
+    width: 100px; 
+    height: 100px; 
+    border: 1px solid #ccc;
+}
+#right{
+    float: left;
+    margin-left: 40px
+}
+#right>b{
+    display: block;
+    color: #f00;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+#right>p{
+    margin-top: 10px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 900;
+}
+#right>span{
+    color: #666;
+    margin-top: 5px;
+}

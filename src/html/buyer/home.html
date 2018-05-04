@@ -1,0 +1,38 @@
+{% extends './common.html' %}
+{% block con %}
+<div id="goods">
+    <h2 class="listGoods">商品
+        {% if goods%}
+        <a href="/goodsList">更多>></a>
+        {% endif %}
+    </h2>
+    <div class="goods-list">
+        {% for goods in goodList %}  
+        <ul>
+            <li><img src="{{goods.thumb}}" alt=""></li>
+            <li><a href="/goodsDetail?goodsId={{goods._id.toString()}}">{{goods.name}}</a></li>
+            <li><span>{{goods.des}}</span></li>
+            <li><p>￥{{goods.price}}</p></li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+<div id="seller">
+        <h2 class="listGoods">店铺
+            {% if goods%}
+            <a href="/sellerList">更多>></a>
+            {% endif %}
+        </h2>
+        <div class="goods-list">
+            {% for seller in sellerList %}  
+            <ul>
+                <li><img src="{{seller.logo}}" alt=""></li>
+                <li><a href="/sellerDetail?sellerId={{seller._id.toString()}}">店铺名：{{seller.name}}</a></li>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/static/buyer/css/home.css">
+{% endblock %}

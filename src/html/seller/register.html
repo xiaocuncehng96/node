@@ -1,0 +1,48 @@
+{% extends './layout.html' %}
+{% block con %}
+<h1 class="title">用户注册</h1>
+    <div id="register" class="form-horizontal">          
+        <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">用户名：</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" placeholder="用户名" name="name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">密码：</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" placeholder="密码" name="password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="repsd" class="col-sm-2 control-label">确认密码：</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="repsd" placeholder="确认密码" name="repsd">
+            </div>
+        </div>
+        <form id="logo-form" class="form-group" enctype="multipart/form-data">
+            <label  class="col-sm-2 control-label">logo：</label>
+            <div class="col-sm-10">
+                    <input class="logo" class="form-control" type="file" name="imgs"/>
+                    <img class="img-logo" src="http://placehold.it/100" />
+            </div>
+        </form>
+        <form id="banner-form" class="form-group" enctype="multipart/form-data">
+            <label  class="col-sm-2 control-label">banner：</label>
+            <div class="col-sm-10">
+                    <input class="banner" class="form-control" type="file" name="imgs"/>
+                    <img class="img-banner" src="http://placehold.it/300x100" />
+            </div>
+        </form>      
+        <button id="confirm" class="btn btn-success btn-block" type="button">注册</button>
+        
+    
+        <a href="/login" class="ab">已有账号，登录</a>
+    </div>
+{%endblock%}
+{% block css %}
+    <link rel="stylesheet" href="/static/seller/css/register.css">
+{% endblock %}
+{% block js %}
+    <script src="/static/seller/js/register.js"></script>
+{% endblock %}

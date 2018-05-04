@@ -1,0 +1,29 @@
+{% extends './layout.html' %}
+{% block con %}
+<table class="table" id="top">
+    <tr>
+        <th>商品</th>
+        <th>详情</th>
+        <th>价格</th> 
+        <th>操作</th>
+    </tr>
+    {% for goods in goodsList %}
+        <tr>
+            <td><img src="{{goods.thumb}}" alt=""></td>
+            <td>{{goods.name}}</td>
+            <td class="pci">￥{{goods.price}}</td>
+            <td>
+                <button name="rem" data-id='{{goods._id.toString()}}' class="btn btn-danger">删除</button>
+                <a class="btn btn-wraning" href="/amendGoods?goodsid={{goods._id.toString()}}">修改</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+<a href="/addGoods" class="btn btn-success btn-block" >新增商品</a>
+{% endblock %}
+{% block css%}
+<link rel="stylesheet" href="/static/seller/css/good.css">
+{%endblock%}
+{% block js %}
+    <script src="/static/seller/js/goodList.js"></script>
+{% endblock %}

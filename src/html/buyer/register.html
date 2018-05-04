@@ -1,0 +1,42 @@
+{% extends './common.html' %}
+{% block con %}
+<h1 class="title">用户注册</h1>
+    <div id="register" class="form-horizontal">          
+        <div class="form-group">
+            <label for="name" class="col-sm-3 control-label">手机号：</label>
+            <div class="col-sm-9 phone" >
+                <input type="text" class="form-control" id="phoneNum" placeholder="手机号" name="phoneNum">
+                <img src="/static/images/gant.jpg" alt="">
+                <img src="/static/images/yes.gif" alt="">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">昵称：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="name" placeholder="昵称" name="name">
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">密码：</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" id="password" placeholder="密码" name="password">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">确认密码：</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="repsd" placeholder="确认密码" name="repsd">
+                </div>
+        </div>       
+        <button id="confirm" class="btn btn-success btn-block" type="button">登录</button>
+        
+    
+        <a href="/login" class="ab">已有账号？去登录</a>
+    </div>
+{%endblock%}
+{% block css %}
+    <link rel="stylesheet" href="/static/seller/css/register.css">
+{% endblock %}
+{% block js %}
+    <script src="/static/buyer/js/register.js"></script>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends './common.html' %}
+{% block con %}
+<div class="goods-list">
+     <h2 class="listGoods">店铺列表
+        <a class="glyphicon glyphicon-arrow-up"  href="/goodslist?sort=1">时间升序</a>
+        <a class="glyphicon glyphicon-arrow-down" href="/goodslist?sort=-1">时间降序</a>
+     </h2>
+    {% for goods in sellers %}
+    <ul>
+        <li>          
+            <img src="{{goods.logo}}"/>
+        </li>
+        <li><a href="/sellerDetail?sellerId={{goods._id.toString()}}">店铺名：{{goods.name}}</a></li>
+    </ul>
+    {% endfor %}
+    </div>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/static/buyer/css/home.css">
+{% endblock %}

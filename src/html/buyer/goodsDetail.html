@@ -1,0 +1,26 @@
+{% extends './common.html' %}
+{% block con %}
+<h2>商品详情</h2>
+    <div id="left">
+        <div id="box1">
+            <img src="{{goods.thumb}}" class="large"/>
+         </div>
+        <div id="box2">
+            {% for img in goods.detail %}
+            <img src="{{img}}" class="small" data-url="{{img}}"/>  
+            {% endfor %}
+        </div>
+    </div>
+    <div id="right">
+       <p>{{goods.name}}</p>
+       <span>{{goods.des}}</span>
+       <b>￥{{goods.price}}</b>
+       <a class="btn btn-success" id="shop">立即购买</a>
+    </div>
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="/static/buyer/css/goodsDetail.css">
+{% endblock %}
+{% block js %}
+<script src="/static/buyer/js/goodsDetail.js"></script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends './common.html' %}
+{% block con %}
+<div id="heade">
+    <img src="{{seller.logo}}" alt="">
+    <a>商家：{{seller.name}}</a>
+</div>
+<div id="banner">
+    <img src="{{seller.banner}}" alt="">
+</div>
+<h2>商品</h2>
+<div class="goods-list">  
+    {% for goods in goodsList %}
+    <ul>
+        <li>
+            <img src="{{goods.thumb}}" alt="">
+        </li>
+        <li><a href="/goodsDetail?goodsId={{goods._id.toString()}}">{{goods.name}}</a></li>
+        <li><span>{{goods.des}}</span></li>
+        <li><p>¥{{goods.price}}</p></li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/static/buyer/css/sellerDetail.css">
+{% endblock %}
